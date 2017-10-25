@@ -12,6 +12,21 @@
     <h3>
         <div>Users Table</div>
     </h3>
+    <form method="post" action="${pageContext.request.contextPath}/filter">
+        <dl>
+            <dt>Find for email:</dt>
+            <dd><input type="text" name="email" value="${email}"></dd>
+        </dl>
+        <dl>
+            <dt>Find for name:</dt>
+            <dd><input type="text" name="firstName" value="${firstName}"></dd>
+        </dl>
+        <dl>
+            <dt>Find for last name:</dt>
+            <dd><input type="text" name="lastName" value="${lastName}"></dd>
+        </dl>
+        <button type="submit">Filter</button>
+    </form>
     <hr/>
     <a href="${pageContext.request.contextPath}/users/create" class="h12">Add User</a>
     <hr/>

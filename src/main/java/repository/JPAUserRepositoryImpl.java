@@ -46,11 +46,13 @@ public class JPAUserRepositoryImpl extends AbstractDaoImpl<User> implements User
 
 
     @Override
-    public User getByEmail(String email) {
-        List<User> users = em.createNamedQuery(User.BY_EMAIL, User.class)
+    public List<User> getByFilter(String email, String firstName, String lastName) {
+        return em.createNamedQuery(User.BY_FILTER, User.class)
                 .setParameter(1, email)
+                .setParameter(2, firstName)
+                .setParameter(3, lastName)
                 .getResultList();
-        return DataAccessUtils.singleResult(users);
+
     }
 
     @Override

@@ -8,7 +8,8 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = User.DELETE, query = "DELETE FROM User u WHERE u.id=:id"),
         @NamedQuery(name = User.ALL, query = "SELECT u FROM User u"),
-        @NamedQuery(name = User.BY_EMAIL, query = "SELECT u FROM User u WHERE u.email=?1"),
+        @NamedQuery(name = User.BY_FILTER, query = "SELECT u FROM User u WHERE u.email LIKE CONCAT('%',?1,'%') " +
+                "and u.firstName LIKE CONCAT('%',?2,'%') and u.lastName LIKE CONCAT('%',?3,'%')"),
 })
 
 @Entity
@@ -18,7 +19,7 @@ import javax.persistence.*;
                 "users_unique_email_idx")})
 public class User {
     public static final String DELETE = "User.delete";
-    public static final String BY_EMAIL = "User.getByEmail";
+    public static final String BY_FILTER = "User.getByFilter";
     public static final String ALL = "User.getAll";
 
 

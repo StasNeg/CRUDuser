@@ -55,5 +55,14 @@ public class UserController {
         repository.save(user);
         return "redirect:/";
     }
-
+    @PostMapping("/filter")
+    public String filter(@ModelAttribute("email") String email,
+                         @ModelAttribute("firstName") String firstName,
+                         @ModelAttribute("lastName") String lastName,
+                         Model model) {
+        if(email.isEmpty() && firstName.isEmpty() && lastName.isEmpty())
+            return "redirect:/";
+        model.addAttribute("users", repository.getByFilter(email, firstName, lastName));
+        return "index";
+    }
 }

@@ -76,9 +76,9 @@ public class JPAUserRepositoryImplTest {
     }
 
     @Test
-    public void testGetByEmail() throws Exception {
-        User user = repository.getByEmail("user@yandex.ru");
-        MATCHER.assertEquals(USER, user);
+    public void testGetByFilter() throws Exception {
+        List<User> user = repository.getByFilter("user@yandex.ru","","");
+        MATCHER.assertCollectionEquals(Collections.singletonList(USER), user);
     }
 
     @Test
