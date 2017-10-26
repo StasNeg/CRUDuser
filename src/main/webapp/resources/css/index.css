@@ -1,3 +1,10 @@
+.h12{
+    background-color: #a8edf2;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+}
+
+
 dl {
     background: none repeat scroll 0 0 #FAFAFA;
     margin: 8px 0;
@@ -33,7 +40,16 @@ dd {
 #users th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #3c99af;
     color: white;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
 }

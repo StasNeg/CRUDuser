@@ -37,8 +37,8 @@
             <dt>Email:</dt>
             <dd><input type="text" value="${user.email}" size=40 name="email"></dd>
         </dl>
-        <button type="submit">Enter</button>
-        <button onclick="window.history.back()" type="button">Cancel</button>
+        <button type="submit" class="h12">Enter</button>
+        <button onclick="window.history.back()" type="button" class="h12">Cancel</button>
     </form>
 </section>
 
